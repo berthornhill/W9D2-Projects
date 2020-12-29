@@ -2,8 +2,8 @@ const MovingObject = require("./moving_object.js");
 const Util = require("./utils.js");
 
 
-
 function Asteroid(position) {
+    
 
     const asteroidProperties = {
         pos: position,
@@ -14,7 +14,11 @@ function Asteroid(position) {
 
     Util.inherits(Asteroid, MovingObject)
 
-    new MovingObject(asteroidProperties);
+    return this = new MovingObject(asteroidProperties);
 }
 
-module.exports = Asteroid
+// const stella = new Asteroid([20, 20]);
+
+// console.log(stella)
+// console.log(stella.instanceof)
+module.exports = Asteroid;

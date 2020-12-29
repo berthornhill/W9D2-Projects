@@ -5,7 +5,7 @@ const Asteroid = require("./asteroid.js");
 
 // remove after testing
 // window.MovingObject = MovingObject;
-Window.Asteroid = Asteroid;
+window.Asteroid = Asteroid;
 
 
 document.addEventListener("DOMContentLoaded", function () {
