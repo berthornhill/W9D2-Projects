@@ -15,7 +15,7 @@
   \**************************/
 /***/ ((module) => {
 
-eval("\n    const canvas = document.getElementById(\"game-canvas\");\n    canvas.height = 500;\n    canvas.width = 500;\n\n    const ctx = canvas.getContext('2d');\n    ctx.fillStyle = \"pink\";\n    ctx.fillRect(0, 0, 500, 500);\n\n\nmodule.exports = {\n    canvas,\n    ctx,\n}\n\n//# sourceURL=webpack:///./src/game_view.js?");
+eval("\n\nfunction canvasLoad() {\n    const canvas = document.getElementById(\"game-canvas\");\n    canvas.height = 500;\n    canvas.width = 500;\n    \n\n    const ctx = canvas.getContext('2d');\n    ctx.fillStyle = \"rgb(51, 51, 204)\";\n    ctx.fillRect(0, 0, 500, 500);\n};\n\nmodule.exports = {\n    canvasLoad,\n}\n\n//# sourceURL=webpack:///./src/game_view.js?");
 
 /***/ }),
 
@@ -25,7 +25,7 @@ eval("\n    const canvas = document.getElementById(\"game-canvas\");\n    canvas
   \******************************/
 /***/ ((module) => {
 
-eval("function MovingObject(optionsHash) { \n \n        this.pos = optionsHash[\"pos\"]; // [x,y]\n        this.vel = optionsHash[\"vel\"]; \n        this.radius = optionsHash[\"radius\"]; // integer\n        this.color = optionsHash[\"color\"];\n        \n};\n\n\nMovingObject.prototype.draw = function(ctx) {\n    ctx.beginPath();\n    ctx.arc(this.pos[0], this.pos[1], this.radius, 0, 2 * Math.PI );\n    ctx.stokeStyle = \"grey\";\n    // ctx.lineWidth\n    ctx.stroke();\n    ctx.fillStyle = \"grey\";\n    ctx.fill();\n}\n\n\nmodule.exports = {\n    MovingObject,\n    draw,\n}\n\nconst mo = new MovingObject({\n    pos: [30, 30],\n    vel: [10, 10],\n    radius: 5,\n    color: \"#00FF00\"\n  });\n\n  console.log(mo);\n\n//# sourceURL=webpack:///./src/moving_object.js?");
+eval("function MovingObject(optionsHash) { \n \n        this.pos = optionsHash[\"pos\"]; // [x,y]\n        this.vel = optionsHash[\"vel\"]; \n        this.radius = optionsHash[\"radius\"]; // integer\n        this.color = optionsHash[\"color\"];\n        \n};\n\n\nMovingObject.prototype.draw = function(ctx) {\n    ctx.beginPath();\n    ctx.arc(this.pos[0], this.pos[1], this.radius, 0, 2 * Math.PI );\n    ctx.stokeStyle = \"rgb(102, 153, 153)\";\n    // ctx.lineWidth\n    ctx.stroke();\n    ctx.fillStyle = \"rgb(102, 153, 153)\";\n    ctx.fill();\n}\n\n\nmodule.exports = {\n    MovingObject,\n}\n\nconst mo = new MovingObject({\n    pos: [30, 30],\n    vel: [10, 10],\n    radius: 20,\n    color: \"#00FF00\"\n  });\n\n//   console.log(mo);\n\n//# sourceURL=webpack:///./src/moving_object.js?");
 
 /***/ })
 
@@ -59,7 +59,7 @@ eval("function MovingObject(optionsHash) { \n \n        this.pos = optionsHash[\
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-eval("const MovingObject = __webpack_require__(/*! ./moving_object.js */ \"./src/moving_object.js\");\nconst GameView = __webpack_require__(/*! ./game_view.js */ \"./src/game_view.js\");\n\nwindow.MovingObject = MovingObject;\nwindow.MovingObject = MovingObject.MovingObject;\nwindow.GameView = GameView.canvas;\n\ndocument.addEventListener(\"DOMContentLoaded\", function(){\n    const canvas = document.getElementById(\"game-canvas\");\n    const ctx = canvas.getContext('2d');\n    canvas.height = 500;\n    canvas.width = 500;\n\n})\n\n\nconsole.log(\"webpack is working!\")\n\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("const MovingObject = __webpack_require__(/*! ./moving_object.js */ \"./src/moving_object.js\");\nconst GameView = __webpack_require__(/*! ./game_view.js */ \"./src/game_view.js\");\n\nwindow.MovingObject = MovingObject;\nwindow.MovingObject = MovingObject.MovingObject;\n\ndocument.addEventListener(\"DOMContentLoaded\", function(){\n    GameView.canvasLoad();\n});\n\n\nconsole.log(\"webpack is working!\")\n\n\n\n//# sourceURL=webpack:///./src/index.js?");
 })();
 
 /******/ })()
