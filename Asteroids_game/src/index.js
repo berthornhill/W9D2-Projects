@@ -1,8 +1,11 @@
 const MovingObject = require("./moving_object.js");
 const canvas = require("./canvas.js");
+const Util = require("./utils.js");
+const Asteroid = require("./asteroid.js");
 
 // remove after testing
 // window.MovingObject = MovingObject;
+Window.Asteroid = Asteroid;
 
 
 document.addEventListener("DOMContentLoaded", function () {
