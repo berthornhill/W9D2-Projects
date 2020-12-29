@@ -18,16 +18,12 @@ MovingObject.prototype.draw = function(ctx) {
     ctx.fill();
 }
 
+// MovingObject.prototype.move = function(){
 
-module.exports = {
-    MovingObject,
-}
+// }
 
-const mo = new MovingObject({
-    pos: [30, 30],
-    vel: [10, 10],
-    radius: 20,
-    color: "#00FF00"
-  });
+
+module.exports = MovingObject
+
 
 //   console.log(mo);

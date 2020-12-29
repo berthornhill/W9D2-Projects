@@ -1,11 +1,12 @@
 const MovingObject = require("./moving_object.js");
-const GameView = require("./game_view.js");
+const canvas = require("./canvas.js");
 
-window.MovingObject = MovingObject;
-window.MovingObject = MovingObject.MovingObject;
+// remove after testing
+// window.MovingObject = MovingObject;
 
-document.addEventListener("DOMContentLoaded", function(){
-    GameView.canvasLoad();
+
+document.addEventListener("DOMContentLoaded", function () {
+    canvas.canvasLoad();
 });
 
 
